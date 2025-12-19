@@ -1,0 +1,13 @@
+name: AutoGitOps CI Pipeline
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run CI Check
+        run: echo "AutoGitOps CI Pipeline executed successfully"
