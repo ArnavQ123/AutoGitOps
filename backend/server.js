@@ -9,7 +9,7 @@ app.use(express.json());
 const SCRIPT_PATH = "../scripts";
 const BASH_PATH = `"C:/Program Files/Git/bin/bash.exe"`;
 
-// Create GitHub Repository
+
 app.post("/create-repo", (req, res) => {
   const { repo } = req.body;
 
@@ -24,7 +24,6 @@ app.post("/create-repo", (req, res) => {
 });
 
 
-// Create Branch
 app.post("/create-branch", (req, res) => {
   const { branch } = req.body;
 
@@ -41,7 +40,6 @@ app.post("/create-branch", (req, res) => {
 });
 
 
-// Auto Commit
 app.post("/auto-commit", (req, res) => {
   const { message } = req.body;
 
@@ -53,8 +51,6 @@ app.post("/auto-commit", (req, res) => {
   );
 });
 
-
-// Sync Repository
 app.post("/sync", (req, res) => {
   exec(`${BASH_PATH} ${SCRIPT_PATH}/sync_repo.sh`, (err, stdout, stderr) => {
     if (err) return res.status(500).send(stderr);
