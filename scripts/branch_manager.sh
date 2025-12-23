@@ -1,4 +1,11 @@
+#!/bin/bash
+branch=$1
 
-read -p "Enter new branch name: " branch
-git checkout -b $branch
-git push origin $branch
+if [ -z "$branch" ]; then
+  echo "Branch name missing"
+  exit 1
+fi
+
+git checkout -b "$branch"
+git push origin "$branch"
+echo "Branch '$branch' created successfully"
