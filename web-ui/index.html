@@ -5,10 +5,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>AutoGitOps Automation System</h1>
-  <p>DevOps GitOps Automation Platform</p>
-  <p>This change is done in feature branch</p>
 
-  <button>Automation handled via Git Bash scripts</button>
+<h1>AutoGitOps Automation Dashboard</h1>
+<p>DevOps GitOps Automation Platform</p>
+
+<input type="text" id="repoName" placeholder="Repository name" />
+<button onclick="createRepo()">Create Repository</button>
+
+<br><br>
+
+<input type="text" id="branchName" placeholder="Branch name" />
+<button onclick="createBranch()">Create Branch</button>
+
+<br><br>
+
+<input type="text" id="commitMsg" placeholder="Commit message" />
+<button onclick="autoCommit()">Auto Commit</button>
+
+<br><br>
+
+<button onclick="syncRepo()">Sync Repository</button>
+
+<pre id="output"></pre>
+
+
+
+<pre id="output"></pre>
+
+<script src="app.js"></script>
 </body>
 </html>
